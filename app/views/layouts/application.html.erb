@@ -12,37 +12,50 @@
   </head>
 
   <body>
-    <header>
-      <li>
-        <%= link_to "Bookers", url="/" %>
-      </li>
-      <li>
-        <%= link_to "Home", url="/" %>
-      </li>
-    <% if user_signed_in? %>
-      <li>
-        <%= link_to "Users", users_path %>
-      </li>
-      <li>
-        <%= link_to "Books", books_path %>
-      </li>
-      <li>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to "About", about_path %>
-      </li>
-      <li>
-        <%= link_to "Sign up", new_user_registration_path %>
-      </li>
-      <li>
-        <%= link_to "Log in", new_user_session_path %>
-      </li>
-    <% end %>
-  </header>
-    <%= yield %>
-  </body>
+    <header class="bg-dark" style="height:56px; align-items:center;">
+      <nav class="navbar navbar-expand-md navbar-light d-flex">
+        <div class="container">
+
+          <p>
+            <%= link_to "Bookers", url="/", class: 'nav-link text-white large-text' %>
+          </p>
+
+          <ul class="navbar-nav navbar-dark d-flex" style="height:56px;">
+            <li class="nav-item col-md-2">
+              <a class="nav-link text-white" href="/">
+                <i class="fa-solid fa-house"></i>
+                <p>Home</p>
+              </a>
+            </li>
+            <% if user_signed_in? %>
+            <li class="nav-item col-md-2">
+              <%= link_to "Users", users_path, class: 'nav-link text-white' %>
+            </li>
+            <li class="nav-item col-md-2">
+              <%= link_to "Books", books_path, class: 'nav-link text-white' %>
+            </li>
+            <li class="nav-item col-md-2" style="white-space: nowrap;">
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
+            </li>
+            <% else %>
+            <li class="nav-item col-md-2">
+              <%= link_to "About", about_path, class: 'nav-link text-white' %>
+            </li>
+            <li class="nav-item col-md-2" style="white-space: nowrap;">
+              <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-white' %>
+            </li>
+            <li class="nav-item col-md-2" style="white-space: nowrap;">
+              <%= link_to "Log in", new_user_session_path, class: 'nav-link text-white' %>
+            </li>
+            <% end %>
+          </ul>
+
+        </div>
+      </nav>
+    </header>
+
+
+
   <main>
     <!--サイドバー-->
     <!--
@@ -55,5 +68,12 @@
       <%= f.submit 'Create Book' %>
     <% end %>
     -->
+    <%= yield %>
   </main>
+
+  <footer class="bg-white d-flex justify-content-center pb-10">
+    <p class="text-#777">CopyRight Infratop.inc</p>
+  </footer>
+
+  </body>
 </html>
