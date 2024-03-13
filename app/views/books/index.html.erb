@@ -1,31 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3">
-      <h2>User info</h2>
-      <div><%= image_tag 'no_image.jpg' %></div>
-      <table class="table">
-        <tbody>
-          <tr>
-            <th>name</th>
-            <th><%= current_user.name %></th>
-          </tr>
-          <tr>
-            <th>introduction</th>
-            <th></th>
-          </tr>
-        </tbody>
-      </table>
-      <h2>New book</h2>
-        <%= form_with model: @book, url: books_path do |f| %>
-          <p>Title</p>
-          <%= f.text_field :title, name: 'book[title]' %>
-          <p>Opinion</p>
-          <%= f.text_area :body, name: 'book[body]' %>
-          <%= button_tag " Create Book ", type: :submit %>
-        <% end %>
-    </div>
-
-    <div class="col-md-1"></div>
+    <%= render 'side-bar', book: @book %>
 
     <div class="col-md-8">
       <h1>Books</h1>
