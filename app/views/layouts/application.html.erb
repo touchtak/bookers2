@@ -11,45 +11,68 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <header class="bg-dark" style="height:56px; align-items:center;">
-      <nav class="navbar navbar-expand-md navbar-light d-flex">
+  <body class="d-flex flex-column vh-100">
+    <header class="shadow-sm" style="height:56px;">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="height:56px;">
         <div class="container">
 
-          <p>
-            <%= link_to "Bookers", url="/", class: 'nav-link text-white large-text' %>
-          </p>
-
-          <ul class="navbar-nav navbar-dark d-flex" style="height:56px;">
-            <li class="nav-item col-md-2">
-              <a class="nav-link text-white" href="/">
-                <i class="fa-solid fa-house"></i>
-                <p>Home</p>
-              </a>
-            </li>
-            <% if user_signed_in? %>
-            <li class="nav-item col-md-2">
-              <%= link_to "Users", users_path, class: 'nav-link text-white' %>
-            </li>
-            <li class="nav-item col-md-2">
-              <%= link_to "Books", books_path, class: 'nav-link text-white' %>
-            </li>
-            <li class="nav-item col-md-2" style="white-space: nowrap;">
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
-            </li>
-            <% else %>
-            <li class="nav-item col-md-2">
-              <%= link_to "About", about_path, class: 'nav-link text-white' %>
-            </li>
-            <li class="nav-item col-md-2" style="white-space: nowrap;">
-              <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-white' %>
-            </li>
-            <li class="nav-item col-md-2" style="white-space: nowrap;">
-              <%= link_to "Log in", new_user_session_path, class: 'nav-link text-white' %>
-            </li>
-            <% end %>
-          </ul>
-
+          <a class="nav-link text-white large-text p-3" href="/">
+            Bookers
+          </a>
+          <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto" style="height:56px;">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="/">
+                  <i class="fa-solid fa-house"></i> Home
+                </a>
+              </li>
+              <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to users_path, class: "text-decoration-none" do %>
+                  <p class="nl text-white">
+                    <i class="fa-solid fa-users"></i> Users
+                  </p>
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to books_path, class: "text-decoration-none" do %>
+                  <p class="nl text-white">
+                    <i class="fa-solid fa-book-open"></i> Books
+                  </p>
+                <% end %>
+              </li>
+              <li class="nav-item" style="white-space: nowrap;">
+                <%= link_to destroy_user_session_path, method: :delete, class: "text-decoration-none" do%>
+                  <p class="nl text-white">
+                    <i class="fa-solid fa-right-from-bracket"></i> Log out
+                  </p>
+                <% end %>
+              </li>
+              <% else %>
+              <li class="nav-item">
+                <%= link_to about_path, class: "text-decoration-none" do%>
+                  <p class="nl text-white">
+                    <i class="fa-solid fa-link"></i> About
+                  </p>
+                <% end %>
+              </li>
+              <li class="nav-item" style="white-space: nowrap;">
+                <%= link_to new_user_registration_path, class: "text-decoration-none" do%>
+                  <p class=" nl text-white">
+                    <i class="fa-solid fa-user-plus"></i> Sign up
+                  </p>
+                <% end %>
+              </li>
+              <li class="nav-item" style="white-space: nowrap;">
+                <%= link_to new_user_session_path, class: "text-decoration-none" do %>
+                  <p class="nl text-white">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i> Log in
+                  </p>
+                <% end %>
+              </li>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>

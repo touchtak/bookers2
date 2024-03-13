@@ -1,26 +1,33 @@
 @use '~bootstrap/scss/bootstrap';
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.navbar{
-  padding: 0;
-  box-sizing: content-box;
-}
-
-.container{
-  width: 100%;
-  height: auto;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
 .large-text{
   font-size: 20px;
 }
 
+.nav-item{
+  margin: auto 10px;
+}
+
+.nl{
+  margin: auto 0;
+  text-decoration: none;
+}
+
+.nav-item:last-child{
+  margin-right: 7px;
+}
+
+.about{
+  width: 100%;
+  margin: 18px auto 60px;
+  text-align: center;
+}
+
+button[type="submit"] {
+  background-color: #6c6;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: inherit;
+  padding: 5px;
+}
