@@ -77,26 +77,13 @@
       </nav>
     </header>
 
+    <main>
+      <%= yield %>
+    </main>
 
-
-  <main>
-    <!--サイドバー-->
-    <!--
-    <h1>New Book</h1>
-    <%= form_with model: @book do |f| %>
-      <h4>Title</h4>
-      <%= f.text_field :title %>
-      <h4>Opinion</h4>
-      <%= f.text_area :body %>
-      <%= f.submit 'Create Book' %>
-    <% end %>
-    -->
-    <%= yield %>
-  </main>
-
-  <footer class="bg-white d-flex justify-content-center pb-10">
-    <p class="text-#777">CopyRight Infratop.inc</p>
-  </footer>
+    <footer class="bg-white d-flex justify-content-center pb-10">
+      <p class="text-#777">CopyRight Infratop.inc</p>
+    </footer>
 
   </body>
 </html>

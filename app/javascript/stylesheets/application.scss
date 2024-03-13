@@ -1,5 +1,10 @@
 @use '~bootstrap/scss/bootstrap';
 
+main{
+  width: 100%;
+  padding: 16px 68px 43px;
+}
+
 .large-text{
   font-size: 20px;
 }
@@ -28,6 +33,15 @@ button[type="submit"] {
   border: none;
   border-radius: 5px;
   color: white;
-  font-size: inherit;
-  padding: 5px;
+  font-size: 14px;
+  padding: 5px 8px;
+}
+
+button[type="submit2"]{
+  background-color: #46f;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  padding: 5px 8px;
 }
