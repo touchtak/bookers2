@@ -28,7 +28,7 @@ main{
   text-align: center;
 }
 
-button[type="submit"] {
+button[type="submit"], .green-button{
   background-color: #6c6;
   border: none;
   border-radius: 5px;
@@ -44,4 +44,21 @@ button[type="submit2"]{
   color: white;
   font-size: 14px;
   padding: 5px 8px;
+}
+
+.red-button{
+  background-color: #f64;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  padding: 5px 8px;
+}
+
+.book-show-tr>td{
+  padding: 7.5px;
+}
+
+.ed-fo{
+  padding: 10px 0;
 }
