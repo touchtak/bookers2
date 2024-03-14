@@ -4,14 +4,6 @@
     <div class="col-md-6">
       <h1>Editing Book</h1>
 
-      <% if @book.errors.any? %>
-        <%= @book.errors.count %> errors prohibited this book from being saved:
-        <ul>
-          <% @book.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      <% end %>
       <%= form_with model: @book do |f| %>
 
       <div class="ed-fo">
@@ -20,7 +12,7 @@
       </div>
 
       <div class="ed-fo">
-        <p>Body</p>
+        <p>Opinion</p>
         <%= f.text_area :body, style: "width:100%;" %>
       </div>
 
