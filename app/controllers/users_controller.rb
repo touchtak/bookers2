@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def update
     user = current_user
     if user.update(user_params)
-      flash[:notice] = "Book was successfully updated."
+      flash[:notice] = "You have updated user successfully."
       redirect_to user_path(user.id)
     else
       @user = current_user
