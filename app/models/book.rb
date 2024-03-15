@@ -4,6 +4,6 @@ class Book < ApplicationRecord
 
   validates :title, presence: true
   validates :body, presence: true
-  validates :introduction, length: {maximum: 200, message: "is too long (maximum is 200 characters)" }
+  validates :body, length: {maximum: 200, message: "is too long (maximum is 200 characters)" }
 
 end
