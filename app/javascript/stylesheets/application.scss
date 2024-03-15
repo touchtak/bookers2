@@ -64,6 +64,20 @@ button[type="submit3"]{
   padding: 5px 8px;
 }
 
+.edit-user-button{
+  display: inline-block;
+  padding: 5px 0;
+  color: #888;
+  border: solid 1px #888;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.edit-user-button:hover{
+  color: white;
+  background-color: #888;
+}
+
 .book-show-tr>td{
   padding: 7.5px;
 }

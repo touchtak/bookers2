@@ -4,6 +4,19 @@
     <div class="col-md-6">
       <h2>User info</h2>
 
+      <div>
+        <% if @user.errors.any? %>
+          <div class="alert">
+            <h3><%= pluralize(@user.errors.count, 'error') %> prohibited this obj from being saved:</h3>
+            <ul>
+              <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+
       <%= form_with model: @user do |f| %>
 
       <div class="ed-fo">
