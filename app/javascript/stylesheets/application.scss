@@ -22,6 +22,10 @@ main{
   margin-right: 7px;
 }
 
+.app-intro{
+  line-height: 50px;
+}
+
 .about{
   width: 100%;
   margin: 18px auto 60px;
@@ -76,6 +80,36 @@ button[type="submit3"]{
 .edit-user-button:hover{
   color: white;
   background-color: #888;
+}
+
+.log-in-button{
+  display: inline-block;
+  height: 35px;
+  margin: 15px 60px 5px 30px;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #48d;
+}
+
+.log-in-button:hover{
+  color: white;
+   background-color: #15a;
+}
+
+.sign-up-button{
+  display: inline-block;
+  height: 35px;
+  margin: 15px 60px 5px 30px;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #6a6;
+}
+
+.sign-up-button:hover{
+  color: white;
+  background-color: #373;
 }
 
 .book-show-tr>td{
