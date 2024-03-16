@@ -16,17 +16,19 @@
       <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="height:56px;">
         <div class="container">
 
-          <a class="nav-link text-white large-text p-3" href="/">
+          <%= link_to root_path, class: "text-decoration-none large-text" do %>
             Bookers
-          </a>
+          <% end %>
           <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto" style="height:56px;">
-              <li class="nav-item">
-                <a class="nav-link text-white" href="/">
-                  <i class="fa-solid fa-house"></i> Home
-                </a>
-              </li>
               <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to user_path(current_user.id), class: "text-decoration-none" do %>
+                  <p class="nl text-white">
+                    <i class="fa-solid fa-house"></i> Home
+                  </p>
+                <% end %>
+              </li>
               <li class="nav-item">
                 <%= link_to users_path, class: "text-decoration-none" do %>
                   <p class="nl text-white">
@@ -44,11 +46,18 @@
               <li class="nav-item" style="white-space: nowrap;">
                 <%= link_to destroy_user_session_path, method: :delete, class: "text-decoration-none" do%>
                   <p class="nl text-white">
-                    <i class="fa-solid fa-right-from-bracket"></i> Log out
+                    <i class="fas fa-sign-out-alt"></i> Log out
                   </p>
                 <% end %>
               </li>
               <% else %>
+              <li class="nav-item">
+                <%= link_to root_path, class: "text-decoration-none" do %>
+                  <p class="nl text-white">
+                    <i class="fa-solid fa-house"></i> Home
+                  </p>
+                <% end %>
+              </li>
               <li class="nav-item">
                 <%= link_to about_path, class: "text-decoration-none" do%>
                   <p class="nl text-white">
@@ -66,7 +75,7 @@
               <li class="nav-item" style="white-space: nowrap;">
                 <%= link_to new_user_session_path, class: "text-decoration-none" do %>
                   <p class="nl text-white">
-                    <i class="fa-solid fa-arrow-right-to-bracket"></i> Log in
+                    <i class="fas fa-sign-in-alt"></i> Log in
                   </p>
                 <% end %>
               </li>
